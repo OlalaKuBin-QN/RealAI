@@ -91,7 +91,7 @@ The images from training generator should be put into the corresponding folder i
 ## Overview of fake image detection dataset
 
 
-| Dataset | GAN | DM | AR | Realistic | Resolution | Semantic Categories | # Real Images | # Fake Images | FID$^\dagger$ |
+| Dataset | GAN | DM | AR | Realistic | Resolution | Semantic Categories | # Real Images | # Fake Images | $^\dagger$ FIDD |
 |----------|:---:|:---:|:---:|----------|----------|----------|----------:|----------:|----------:|
 | CNNSpot | ✓ | ✗ | ✗ | No | Low | No | 362,000 | 362,000 | 51.93 |
 | Synthbuster | ✗ | ✓ | ✗ | Mixed | Mixed | No | 1,000 | 9,000 | 70.32 |
@@ -100,7 +100,7 @@ The images from training generator should be put into the corresponding folder i
 | Chameleon | ✗ | ✓ | ✗ | Yes | Mixed | No | 14,863 | 11,170 | 60.11 |
 | **RealAI (Ours)** | ✓ | ✓ | ✓ | Yes | High | Yes | 15,000 | 90,000 | 53.03 |
 
-$^\dagger$  FID is computed between the real and fake subsets of subsetion of each dataset using Inception-V3 features.
+$^\dagger$ FID is computed between the subset of real and fake images of each dataset using Inception-V3 features.
 
 ## Detection Methods
 
@@ -216,7 +216,7 @@ sual generation (PAR)](https://github.com/YuqingWang1029/PAR)
 |----------|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
 | Human | 65.40 | 0.00 | 33.14 | 99.48 | 87.36 | 13.94 | 99.88 |
 | **Avg Acc Fake** | **65.40** | **0.00** | **33.14** | **99.48** | **87.36** | **13.94** | **99.88** |
-| **Avg Acc Real/Fake** | **81.23** | **49.94** | **65.77** | **79.82** | **68.67** | **52.82** | **91.23** |
+| **Avg Acc Real/Fake** | **81.28** | **49.94** | **65.77** | **79.82** | **68.67** | **52.82** | **91.23** |
 | **AUC/AUROC** | **93.32** | **53.66** | **91.86** | **94.28** | **79.00** | **59.40** | **99.73** |
 
 #### StyleGAN3
@@ -226,13 +226,13 @@ sual generation (PAR)](https://github.com/YuqingWang1029/PAR)
 | Animal | 29.54 | 0.02 | 9.62 | 76.10 | 45.70 | 11.78 | 99.84 |
 | Human | 59.46 | 0.00 | 24.36 | 99.98 | 41.14 | 21.14 | 99.78 |
 | **Avg Acc Fake** | **44.50** | **0.01** | **16.99** | **88.04** | **43.42** | **16.46** | **99.81** |
-| **Avg Acc Real/Fake** | **65.25** | **50.00** | **57.89** | **82.09** | **51.50** | **50.87** | **91.65** |
+| **Avg Acc Real/Fake** | **65.25** | **49.95** | **57.89** | **82.09** | **51.50** | **50.87** | **91.65** |
 | **AUC/AUROC** | **76.28** | **52.09** | **87.99** | **90.76** | **54.61** | **56.64** | **99.43** |
 
 | GAN Overall | CNNSpot | DIMD | UnivFD | RINE | Proxy | DIRE | PatchCraft |
 |------------|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
 | **Avg Acc GAN** | **54.95** | **0.01** | **25.07** | **93.76** | **65.39** | **15.20** | **99.85** |
-| **Avg Acc Real /GAN** | **70.59** | **49.99** | **60.51** | **81.33** | **57.22** | **51.52** | **91.52** |
+| **Avg Acc Real /GAN** | **70.59** | **49.94** | **60.51** | **81.33** | **57.22** | **51.52** | **91.51** |
 | **AUC/AUROC** | **82.49** | **53.09** | **89.11** | **91.08** | **61.74** | **57.54** | **99.49** |
 
 
@@ -247,7 +247,7 @@ sual generation (PAR)](https://github.com/YuqingWang1029/PAR)
 | Animal | 17.10 | 75.18 | 36.22 | 87.80 | 70.20 | 15.48 | 97.38 |
 | Landscape | 19.96 | 81.54 | 54.40 | 93.90 | 78.14 | 14.56 | 98.40 |
 | **Avg Acc Fake** | **18.53** | **78.36** | **45.31** | **90.85** | **74.17** | **15.02** | **97.89** |
-| **Avg Acc Real/Fake** | **52.5** | **88.69** | **72.01** | **93.08** | **74.36** | **47.45** | **94.84** |
+| **Avg Acc Real/Fake** | **52.5** | **88.66** | **72.01** | **93.08** | **74.36** | **47.45** | **94.90** |
 | **AUC/AUROC** | **65.16** | **98.98** | **93.50** | **98.40** | **81.11** | **44.05** | **98.77** |
 
 #### PAR
@@ -262,7 +262,7 @@ sual generation (PAR)](https://github.com/YuqingWang1029/PAR)
 | AR Overall | CNNSpot | DIMD | UnivFD | RINE | Proxy | DIRE | PatchCraft |
 |------------|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
 | **Avg Acc AR** | **23.88** | **61.74** | **48.75** | **73.46** | **66.63** | **14.04** | **98.11** |
-| **Avg Acc Real/AR** | **56.22** | **82.98** | **73.08** | **87.81** | **72.73** | **47.63** | **96.19** |
+| **Avg Acc Real/AR** | **56.22** | **82.96** | **73.08** | **87.81** | **72.73** | **47.63** | **96.23** |
 | **AUC/AUROC** | **71.03** | **98.03** | **93.59** | **96.60** | **79.75** | **44.36** | **99.15** |
 
 ---
