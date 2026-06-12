@@ -91,14 +91,16 @@ The images from training generator should be put into the corresponding folder i
 ## Overview of fake image detection dataset
 
 
-| Dataset | GAN | DM | AR | Realistic | Resolution | Semantic Categories | # Real Images | # Fake Images | FID |
+| Dataset | GAN | DM | AR | Realistic | Resolution | Semantic Categories | # Real Images | # Fake Images | FID$^\dagger$ |
 |----------|:---:|:---:|:---:|----------|----------|----------|----------:|----------:|----------:|
 | CNNSpot | ✓ | ✗ | ✗ | No | Low | No | 362,000 | 362,000 | 51.93 |
 | Synthbuster | ✗ | ✓ | ✗ | Mixed | Mixed | No | 1,000 | 9,000 | 70.32 |
 | GenImage | ✓ | ✓ | ✗ | Mixed | Mixed | No | 1,331,167 | 1,350,000 | 49.53 |
+| WildFake | ✓ | ✓ | ✓ | Mixed | Mixed | No | 1,013,446 | 2,557,278 | 99.82 |
 | Chameleon | ✗ | ✓ | ✗ | Yes | Mixed | No | 14,863 | 11,170 | 60.11 |
-| WidlFake | ✓ | ✓ | ✓ | No | Mixed | No | 1,013,446 | 2,557,278 | 99.82 |
 | **RealAI (Ours)** | ✓ | ✓ | ✓ | Yes | High | Yes | 15,000 | 90,000 | 53.03 |
+
+$^\dagger$  FID is computed between the real and fake subsets of subsetion of each dataset using Inception-V3 features.
 
 ## Detection Methods
 
